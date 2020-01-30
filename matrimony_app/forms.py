@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import User,Registration
 
 
 
@@ -10,3 +10,10 @@ class SignupForm(forms.ModelForm):
         widgets = {
             'password':forms.PasswordInput(),
         }
+
+class RegistrationForm(forms.ModelForm):
+    class Meta:
+        model = Registration
+        fields = '__all__'
+        exclude = ('user',)
+
