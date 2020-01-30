@@ -66,5 +66,5 @@ class Registration(models.Model):
     mother_tongue = models.CharField(choices=MOTHER_TONGUE_CHOICES,max_length=10)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
 
