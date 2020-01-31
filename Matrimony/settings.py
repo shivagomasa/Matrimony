@@ -50,6 +50,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login/'
+
 ROOT_URLCONF = 'Matrimony.urls'
 
 TEMPLATES = [
@@ -122,3 +126,7 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = 'matrimony_app.User'
+
+AUTHENTICATION_BACKEND = (
+    'django.contrib.auth.backends.ModelBackend'
+)
