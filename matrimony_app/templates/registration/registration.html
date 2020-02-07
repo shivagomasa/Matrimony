@@ -1,0 +1,35 @@
+{% extends 'matrimony/base.html' %}
+
+{% block content %}
+
+
+    <form method="post">
+        <h2>Basic Information</h2><hr>
+        {% csrf_token %}
+        {{ register_form.as_p }}
+        <br>
+        <h2>Physical Characteristics</h2><hr>
+        {% csrf_token %}
+        {{ physical_form.as_p }}
+        <br>
+        <h2>Education&Occupation</h2><hr>
+        {% csrf_token %}
+        {{ edu_form.as_p }}
+        <br>
+        <h2>Astrology Information</h2><hr>
+        {% csrf_token %}
+        {{ astr_form.as_p }}
+        <br>
+        <h2>Habits</h2><hr>
+        {% csrf_token %}
+        {{ habit_form.as_p }}
+        <br>
+        <h2>Family Profile</h2><hr>
+        {% csrf_token %}
+        {{ family_form.as_p }}
+        <br>
+        <button type="submit">Save</button>
+
+    </form>
+
+{% endblock %}
