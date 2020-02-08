@@ -60,7 +60,7 @@ def registration(request):
         'physical_form':physical_form,
         'edu_form':edu_form,
         'astr_form':astr_form,
-        'habit_form':astr_form,
+        'habit_form':habit_form,
         'family_form':family_form,
 
         }

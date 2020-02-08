@@ -1,15 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Matrimony</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <div class="content container">
-        <div class="homepage">
-            {% block content %}
-            {% endblock %}
+    <div class="navbar">
+        <div class='nav-brand'>
+            <h2><a href= "/">Clone Matrimony</a></h2>
         </div>
+        <div class="nav-links">
+            <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
+            <a href="{% url 'signup'%}" class="btn btn-danger" id="register_btn">Register</a>
+        </div>
+    </div>
+    <hr>
+    <div class="content container">
+        {% block content %}
+        {% endblock %}    
     </div>
 </body>
 </html>

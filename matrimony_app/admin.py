@@ -1,6 +1,7 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
 from .models import User,Registration
-from .forms import BasicInfoForm
+from .forms import BasicInfoForm,PhysicalCharcForm
 # Register your models here.
 
 
@@ -10,7 +11,6 @@ class UserAdmin(admin.ModelAdmin):
     list_filter = ('first_name','email',)
 
 
-
 class RegistrationAdmin(admin.ModelAdmin):
     form = BasicInfoForm
     list_display = ('user','profile_for','gender','religion','mother_tongue',)
@@ -18,5 +18,7 @@ class RegistrationAdmin(admin.ModelAdmin):
     list_filter = ('gender','religion',)
 
 
+
 admin.site.register(User)
 admin.site.register(Registration, RegistrationAdmin)
+admin.site.unregister(Group)

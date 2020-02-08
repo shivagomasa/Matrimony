@@ -1,0 +1,15 @@
+body {
+    margin-top: 10px;
+}
+
+.nav-brand a{
+    color:#BD2C0D;
+    margin-left: 100px;
+    text-decoration: none;
+}
+.nav-links {
+    margin-right: 100px;
+}
+#register_btn {
+    margin-left: 10px;
+}

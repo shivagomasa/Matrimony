@@ -5,14 +5,8 @@
     {% if user.is_authenticated %}
         <h2>Welcome to my website</h2>
         <h4>Hello : {{ user.email }}</h4>
-        <a href="{% url 'logout' %}?next=/">Logout</a>
+        <a href="{% url 'logout' %}?next=/" class="btn btn-danger">Logout</a>
         or
-        <a href="{% url 'registration' %}">Register</a>
-    {% else %}
-        <h2>Clone Matrimony</h2>
-        <a href="{% url 'signup' %}">Signup</a>
-        <br>
-        or
-        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'registration' %}" class="btn btn-primary">Register</a>
     {% endif %}
 {% endblock %}
