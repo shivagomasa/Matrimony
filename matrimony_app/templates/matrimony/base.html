@@ -1,11 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Matrimony</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://kit.fontawesome.com/966de6f217.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="navbar">
@@ -13,8 +16,12 @@
             <h2><a href= "/">Clone Matrimony</a></h2>
         </div>
         <div class="nav-links">
-            <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
-            <a href="{% url 'signup'%}" class="btn btn-danger" id="register_btn">Register</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}?next=/" class="btn btn-danger">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-danger">Login</a>
+                <a href="{% url 'signup'%}" class="btn btn-danger" id="register_btn">Register</a>
+            {% endif %}
         </div>
     </div>
     <hr>
@@ -22,5 +29,56 @@
         {% block content %}
         {% endblock %}    
     </div>
+
+    <footer class="page-footer font-small stylish-color-dark pt-4">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+                    <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,consectetur adipisicing elit.</p>
+
+                </div>
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <div class="col-md-3 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mx-auto">
+                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Follow us on</h5
+                    
+                    <div class="social-icons">
+                        <a href="/"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="/"><i class="fab fa-twitter fa-2x"></i></a>    
+                        <a href="/"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <hr class="clearfix w-100 d-md-none">
+
+            </div>
+        </div>
+
+        <hr>
+  
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> Clone Matrimony.com</a>
+        </div>
+    </footer>
+
 </body>
 </html>

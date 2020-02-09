@@ -48,6 +48,7 @@ def registration(request):
             return redirect('/')
         if edu_form.is_valid():
             edu_form.save()
+    
     else:
         register_form = BasicInfoForm()
         physical_form = PhysicalCharcForm()
@@ -64,4 +65,5 @@ def registration(request):
         'family_form':family_form,
 
         }
+    
     return render(request, 'registration/registration.html',frontend)

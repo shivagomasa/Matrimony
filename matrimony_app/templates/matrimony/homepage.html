@@ -2,11 +2,71 @@
 
 {% block content %}
 
-    {% if user.is_authenticated %}
-        <h2>Welcome to my website</h2>
-        <h4>Hello : {{ user.email }}</h4>
-        <a href="{% url 'logout' %}?next=/" class="btn btn-danger">Logout</a>
-        or
-        <a href="{% url 'registration' %}" class="btn btn-primary">Register</a>
-    {% endif %}
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Find your perfect life partner and perfect family. </h3>
+            <p>Clone Matrimony is ready to find the perfect match from lakhs of brides & grooms.We belived that marriage is not just two persons but about two families,we help you to find partner for your right community,intersts and preferences.</p>
+        </div>
+        <div class="col-md-6">
+            <p>Content carousel</p>
+        </div>
+    </div>
+    <hr>
+    
+    <h2 style="text-align:center;margin-top:50px;">Why Clone Matrimony?</h2>
+    <div class="row" style="margin-top:50px">
+        <div class="col-md-3">
+            <p>Sub content</p>
+        </div>
+        <div class="col-md-3">
+            <p>Sub content
+        </div>
+        <div class="col-md-3">
+            <p>Sub content
+        </div>
+        <div class="col-md-3">
+            <p>Sub content</p>
+        </div>
+    </div>
+    <hr>
+    
+    <div class="testimonials" style="margin-top:50px">
+        <h2 style="text-align:center;">Testimonials</h2>
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-4">
+                <p>content</p>
+            </div>
+            <div class="col-md-4">
+                <p>Content</p>
+            </div>
+            <div class="col-md-4">
+                <p>Content</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    
+    <div class="additional-data" style="margin-top:50px">
+        <h2 style="text-align:center">Additional Data</h2>
+        <div class="row" style="margin-top:50px">
+            <div class="col-md-6">
+                <p>Content</p>
+            </div>
+            <div class="col-md-6">
+                <p>Content</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <ul class="list-unstyled list-inline text-center py-2">
+        <li class="list-inline-item">
+            <h5 class="mb-1">Register for free</h5>
+        </li>
+        <li class="list-inline-item">
+            <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a> 
+       </li>
+    </ul>
+    <hr>
 {% endblock %}
